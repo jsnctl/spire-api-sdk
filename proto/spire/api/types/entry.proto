@@ -89,7 +89,7 @@ message Entry {
     optional AdditionalAttributes additional_attributes = 16;
 
     // The time to live for WIT-SVID identities issues for this entry (in seconds), overttide ttl if set.
-    int64 wit_svid_ttl = 17;
+    int32 wit_svid_ttl = 17;
 }
 
 // Field mask for Entry fields

@@ -69,7 +69,7 @@ type Entry struct {
 	CreatedAt            int64                       `protobuf:"varint,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	AdditionalAttributes *Entry_AdditionalAttributes `protobuf:"bytes,16,opt,name=additional_attributes,json=additionalAttributes,proto3,oneof" json:"additional_attributes,omitempty"`
 	// The time to live for WIT-SVID identities issues for this entry (in seconds), overttide ttl if set.
-	WitSvidTtl    int64 `protobuf:"varint,17,opt,name=wit_svid_ttl,json=witSvidTtl,proto3" json:"wit_svid_ttl,omitempty"`
+	WitSvidTtl    int32 `protobuf:"varint,17,opt,name=wit_svid_ttl,json=witSvidTtl,proto3" json:"wit_svid_ttl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -216,7 +216,7 @@ func (x *Entry) GetAdditionalAttributes() *Entry_AdditionalAttributes {
 	return nil
 }
 
-func (x *Entry) GetWitSvidTtl() int64 {
+func (x *Entry) GetWitSvidTtl() int32 {
 	if x != nil {
 		return x.WitSvidTtl
 	}
@@ -501,7 +501,7 @@ const file_spire_api_types_entry_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x0f \x01(\x03R\tcreatedAt\x12e\n" +
 	"\x15additional_attributes\x18\x10 \x01(\v2+.spire.api.types.Entry.AdditionalAttributesH\x00R\x14additionalAttributes\x88\x01\x01\x12 \n" +
-	"\fwit_svid_ttl\x18\x11 \x01(\x03R\n" +
+	"\fwit_svid_ttl\x18\x11 \x01(\x05R\n" +
 	"witSvidTtl\x1a\x84\x01\n" +
 	"\x14AdditionalAttributes\x12;\n" +
 	"\x1adisable_x509_svid_prefetch\x18\x01 \x01(\bR\x17disableX509SvidPrefetch\x12/\n" +
