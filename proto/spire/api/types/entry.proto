@@ -88,7 +88,8 @@ message Entry {
     }
     optional AdditionalAttributes additional_attributes = 16;
 
-    // The time to live for WIT-SVID identities issues for this entry (in seconds), overttide ttl if set.
+    // The time to live for WIT-SVID identities issued for this entry (in seconds).
+    // The server default will be used if unset.
     int32 wit_svid_ttl = 17;
 }
 
@@ -139,6 +140,6 @@ message EntryMask {
     // additional_attributes field mask
     bool additional_attributes = 16;
 
-    // wit_svid_ttl mask
+    // wit_svid_ttl field mask
     bool wit_svid_ttl = 17;
 }

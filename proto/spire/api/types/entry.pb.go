@@ -68,7 +68,8 @@ type Entry struct {
 	// When the entry was created (seconds since Unix epoch).
 	CreatedAt            int64                       `protobuf:"varint,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	AdditionalAttributes *Entry_AdditionalAttributes `protobuf:"bytes,16,opt,name=additional_attributes,json=additionalAttributes,proto3,oneof" json:"additional_attributes,omitempty"`
-	// The time to live for WIT-SVID identities issues for this entry (in seconds), overttide ttl if set.
+	// The time to live for WIT-SVID identities issued for this entry (in seconds).
+	// The server default will be used if unset.
 	WitSvidTtl    int32 `protobuf:"varint,17,opt,name=wit_svid_ttl,json=witSvidTtl,proto3" json:"wit_svid_ttl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -256,7 +257,7 @@ type EntryMask struct {
 	CreatedAt bool `protobuf:"varint,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// additional_attributes field mask
 	AdditionalAttributes bool `protobuf:"varint,16,opt,name=additional_attributes,json=additionalAttributes,proto3" json:"additional_attributes,omitempty"`
-	// wit_svid_ttl mask
+	// wit_svid_ttl field mask
 	WitSvidTtl    bool `protobuf:"varint,17,opt,name=wit_svid_ttl,json=witSvidTtl,proto3" json:"wit_svid_ttl,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
